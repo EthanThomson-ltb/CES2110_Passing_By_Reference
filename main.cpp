@@ -7,6 +7,8 @@ void aBswap(int& a, int& b);
 //Function to calculate factorial recursively
 long long factorial_recursive(int n);
 
+int iRecursive = 0;
+
 int main() {
 
     cout << "---Part one---" << endl;
@@ -28,7 +30,7 @@ int main() {
     if (n < 0) {
         cout << "Error - Cannot create factorial of a negative number" << endl;
     } else {
-        cout << "Factorial of " << n << " = " << factorial_recursive(n) << endl;
+        cout << "Factorial of " << n << " = " << factorial_recursive(n) << endl << "Function called " << iRecursive << " times.";
     }
 
 
@@ -44,6 +46,7 @@ void aBswap(int& a, int& b) {
 
 //Function to calculate factorial recursively
 long long factorial_recursive(int n) {
+    iRecursive++;
     // Default case where 0! & 1! = 1
     if (n == 0 || n == 1) {
         return 1;
